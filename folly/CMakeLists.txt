@@ -1,0 +1,49 @@
+#
+# Copyright (C) 2017, yumo
+#
+
+set(FOLLY_BASE_SRCS
+	Assume.cpp
+	Benchmark.cpp
+	Bits.cpp
+	Checksum.cpp
+	ClockGettimeWrappers.cpp
+	Conv.cpp
+	Demangle.cpp
+	dynamic.cpp
+	ExceptionWrapper.cpp
+	Executor.cpp
+	File.cpp
+	FileUtil.cpp
+	Format.cpp
+	GroupVarint.cpp
+	IPAddress.cpp
+	IPAddressV4.cpp
+	IPAddressV6.cpp
+	json.cpp
+	LifoSem.cpp
+	MacAddress.cpp
+	MallctlHelper.cpp
+	MemoryMapping.cpp
+	MicroLock.cpp
+	Random.cpp
+	SafeAssert.cpp
+	ScopeGuard.cpp
+	SharedMutex.cpp
+	Shell.cpp
+	Singleton.cpp
+	SingletonStackTrace.cpp
+	SingletonVault_c.cpp
+	SocketAddress.cpp
+	SpookyHashV1.cpp
+	SpookyHashV2.cpp
+	StringBase.cpp
+	String.cpp
+	Subprocess.cpp
+	ThreadCachedArena.cpp
+	TimeoutQueue.cpp
+	Unicode.cpp
+	Uri.cpp
+	Version.cpp
+)
+add_library(folly_base OBJECT ${FOLLY_BASE_SRCS})
