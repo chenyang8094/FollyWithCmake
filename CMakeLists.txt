@@ -241,6 +241,7 @@ add_subdirectory(folly/experimental/io)
 add_subdirectory(folly/futures)
 add_subdirectory(folly/io)
 add_subdirectory(folly/io/async)
+add_subdirectory(folly/io/async/ssl)
 add_subdirectory(folly/stats)
 add_subdirectory(folly/fibers)
 add_subdirectory(folly/detail)
@@ -265,6 +266,7 @@ add_library(folly STATIC
     $<TARGET_OBJECTS:folly_futures>
     $<TARGET_OBJECTS:folly_io>
     $<TARGET_OBJECTS:folly_io_async>
+	$<TARGET_OBJECTS:folly_io_async_ssl>
     $<TARGET_OBJECTS:folly_stats>
 	$<TARGET_OBJECTS:folly_portability>
 	$<TARGET_OBJECTS:folly_detail>
