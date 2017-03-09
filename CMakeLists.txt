@@ -248,7 +248,8 @@ add_subdirectory(folly/build)
 add_subdirectory(folly/portability)
 
 FILE(GLOB_RECURSE FOLLY_INCLUDES_EXPORT folly/*.h)
-FILE(GLOB_RECURSE FOLLY_EXCLUDED_EXPORT folly/experimental/RCUUtils.h
+FILE(GLOB_RECURSE FOLLY_EXCLUDED_EXPORT folly/SingletonStackTrace.h
+										folly/experimental/RCUUtils.h
 										folly/experimental/io/AsyncIO.h
 										folly/experimental/symbolizer/*.h
 										folly/experimental/exception_tracer/*.h)

@@ -32,7 +32,7 @@ set(FOLLY_BASE_SRCS
 	SharedMutex.cpp
 	Shell.cpp
 	Singleton.cpp
-	SingletonStackTrace.cpp
+	#SingletonStackTrace.cpp
 	SingletonVault_c.cpp
 	SocketAddress.cpp
 	SpookyHashV1.cpp
