@@ -1,6 +1,9 @@
 Folly: Facebook Open-source Library
 -----------------------------------
 
+ This is a copy of the official library (https://github.com/facebook/folly v2017.03.06.00), I just
+ changed to use cmake to build the project, the purpose is to package for conan mirror. 
+
 ### What is `folly`?
 
 Folly (acronymed loosely after Facebook Open Source Library) is a
