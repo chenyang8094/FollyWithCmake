@@ -52,7 +52,7 @@ include(CMakeOptions.cmake)
 set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fPIC")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fPIC -DFOLLY_HAVE_CLOCK_GETTIME")
 
 # Link libraries
 link_libraries(
@@ -248,6 +248,22 @@ add_subdirectory(folly/detail)
 add_subdirectory(folly/build)
 add_subdirectory(folly/portability)
 
+set(FOLLY_HEADER_DIRS
+        folly/experimental
+        folly/futures
+        folly/io
+        folly/stats
+        folly/detail
+        folly/build
+        folly/portability
+        folly/fibers
+        folly/test
+        folly/ssl
+        folly/tracing
+        folly/init
+        folly/gen
+        )
+
 FILE(GLOB_RECURSE FOLLY_INCLUDES_EXPORT folly/*.h)
 FILE(GLOB_RECURSE FOLLY_EXCLUDED_EXPORT folly/SingletonStackTrace.h
 										folly/experimental/RCUUtils.h
@@ -272,4 +288,10 @@ add_library(folly STATIC
 	$<TARGET_OBJECTS:folly_detail>
 	$<TARGET_OBJECTS:folly_build>
 )
-install(FILES ${FOLLY_INCLUDES_EXPORT} DESTINATION include)
+
+install(FILES ${FOLLY_INCLUDES_EXPORT} DESTINATION include/folly)
+install(TARGETS folly DESTINATION lib)
+foreach(dir ${FOLLY_HEADER_DIRS})
+    install(DIRECTORY ${dir} DESTINATION include/folly
+            FILES_MATCHING PATTERN "*.h")
+endforeach()
